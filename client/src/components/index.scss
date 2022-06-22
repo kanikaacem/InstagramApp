@@ -1,0 +1,112 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.Topbar {
+    width: 100%;
+    display: flex;
+    height: 50px;
+    background: black;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 0px;
+    z-index:999;
+    
+    .leftsidebar {
+        flex: 3;
+        
+        .websiteLogo{
+                color: white;
+                text-decoration: none;
+                margin-left: 100px;
+                font-size: 25px
+            }
+    }
+
+    .centersidebar {
+        flex: 5;
+
+        .searchbarDiv {
+            background: white;
+            width: 70%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .searchbarIcon {
+                margin-left: 10px;
+            }
+
+            .searchbar {
+                width: auto;
+                border: none;
+                padding: 10px;
+                width: 350px;
+            }
+            
+            .searchbar:focus {
+                outline: none;
+            }
+        }
+    }
+    
+    .rightsidebar {
+        flex: 4;
+
+        .rightsidebarLinkMenu {
+            display: flex;
+
+            .rightsidelink {
+                margin-right: 20px;
+                color: white;
+                cursor: pointer;
+            }
+            .rightsidebarIcon {
+                display: flex;
+            }
+        }
+    }
+
+
+    
+}
+
+.mainDiv{
+    .mainContainer {
+        display: flex;
+        margin-top:50px;
+
+        .Sidebar {
+            flex: 2;
+            overflow-y: scroll;
+            height: calc(100vh - 50px);
+            position: sticky;
+            top:0;
+
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background-color: #f1f1f1;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background-color: gray;
+            }
+        }
+
+        .Feed {
+            flex: 7;
+        }
+        
+        .RightSidebar {
+            flex: 3
+        }
+
+        
+    }
+
+}

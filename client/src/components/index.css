@@ -1,0 +1,523 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.Topbar {
+    width: 100%;
+    display: flex;
+    height: 50px;
+    background: black;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 0px;
+    z-index:999;
+}
+
+.leftsidebar span {
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profileImage {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.rightsidebar {
+    display: flex;
+    align-items: center;
+}
+
+.rightsidebarLinkMenu {
+    display: flex;
+}
+
+.rightsidelink {
+    margin-right: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.searchbar {
+    width: auto;
+    border: none;
+    padding: 10px;
+    width: 350px;
+}
+
+.searchbar:focus {
+    outline: none;
+}
+
+.leftsidebar {
+    flex: 3;
+}
+
+.leftsidebar span {
+    margin-left: 200px;
+}
+
+.centersidebar {
+    flex: 5;
+}
+
+.rightsidebar {
+    flex: 4;
+}
+
+/* Sidebar container */
+.mainContainer {
+    display: flex;
+    margin-top:50px;
+}
+
+.Sidebar {
+    flex: 2;
+    overflow-y: scroll;
+    height: calc(100vh - 50px);
+    position: sticky;
+    top:0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+.Feed {
+    flex: 7;
+}
+
+.RightSidebar {
+    flex: 3
+}
+
+.SidebarWrapper {
+    padding: 10px;
+}
+
+.SidebarItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    cursor:pointer;
+}
+
+.SidebarItemIcon {
+    margin-right: 10px;
+}
+
+.showMore {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.FriendImage {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.FriendItem {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.searchbarDiv {
+    background: white;
+    width: 70%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbarIcon {
+    margin-left: 10px;
+}
+
+.rightsidebarIcon {
+    display: flex;
+}
+
+.rightbaricon {
+    position: relative;
+    margin-right: 30px;
+}
+
+.rightbaricon svg {
+    fill: white;
+}
+
+.rightbaricontext {
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    background: red;
+    color: white;
+    font-weight: 500;
+    padding: 0 5px;
+    border-radius: 50%;
+}
+
+.FeedWrapper {
+    padding: 20px;
+}
+
+.ShareFeed,
+.connectionFeedContainer {
+    box-shadow: -6px 12px 16px 0px rgba(102, 96, 96, 0.75);
+    -webkit-box-shadow: -6px 12px 16px 0px rgba(102, 96, 96, 0.75);
+    -moz-box-shadow: -6px 12px 16px 0px rgba(102, 96, 96, 0.75);
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px
+}
+
+.connectionFeedContainer {
+    margin-top: 40px;
+}
+
+.ShareProfileImg {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ShareTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ShareTopInput input {
+    padding: 5px;
+    margin-left: 10px;
+    border: none;
+    width: 600px;
+
+}
+.ShareTopInput input:focus{
+    outline:none;
+}
+
+.ShareBottom {
+    margin-top: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+.ShareButtonItems {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.insertPhoto {
+    fill: orange !important;
+}
+
+.style {
+    fill: blue !important;
+}
+
+.addLocation {
+    fill: green !important;
+}
+
+.emotion {
+    fill: yellow !important;
+}
+
+.ShareButton {
+    padding: 0 20px;
+    border: none;
+    background: green;
+    color: white;
+    border-radius: 5px;
+    margin-left: 140px;
+
+}
+
+.connectionProfileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.connectionFeedTop {
+    display: flex;
+    align-items: center;
+    position:relative;
+}
+
+.postTime {
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.moreView {
+    position:absolute;
+    right:0px;
+    cursor: pointer;
+}
+
+.connectionFeedImage {
+    /* width: auto; */
+    max-width: 100%;
+    object-fit: contain;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.connectionFeedBottom {
+    display: flex;
+    align-items: center;
+    position:relative;
+}
+
+.ShareIcon,
+.HeartIcon {
+    width: 40px;
+    margin-right: 10px;
+    cursor:pointer;
+}
+
+.peopleCommentCount {
+    font-size: 14px;
+    border-bottom: 1px solid;
+    border-bottom-style: dashed;
+    position:absolute;
+    right:0px;
+}
+
+.RightSideBarWrapper {
+    padding: 10px;
+}
+
+.BirthdayDiv {
+    display: flex;
+    align-items: center;
+}
+
+.BirthdayImage {
+    width: 35px;
+    margin-right: 10px
+}
+
+.onlineAdsImage {
+    max-width: 80%;
+    margin: 10px;
+    border-radius: 20px;
+
+}
+
+.RightSidebarSeperator {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.onlineFriend {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.ImageDiv {
+    position: relative;
+}
+
+.FriendAvailibilty {
+    background: green;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border: 2px solid white;
+    position: absolute;
+    left: 25px;
+}
+.connectionFeedDescription{
+    padding:10px;
+}
+.websiteLogo{
+    color: white;
+    text-decoration: none;
+    margin-left: 100px;
+    font-size: 25px
+}
+.UserProfileDiv{
+    flex: 7;
+}
+.profileBackgroundImage{
+    height: 400px !important;
+    width: 100%;
+}
+.profileUserImage{
+    position: absolute;
+    top: 277px;
+    width: 200px;
+    height: 200px;
+    left: 40%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+}
+.UserProfiletop{
+    position:relative;
+}
+
+.UserProfileBottom{
+    margin-top: 83px;
+    text-align: center;
+}
+.UserName{
+    font-size:30px;
+}
+
+.UserProfileContent{
+    display: flex;
+}
+.ProfileFeed{
+    flex: 7;
+}
+
+.UserInformation{
+    margin:10px 0;
+}
+
+.Information{
+    margin-bottom: 10px;
+}
+
+.FriendInformationImage{
+    width:150px;
+}
+
+.UserFriendInformation{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.UsersFriends{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    gap: 6%
+}
+
+.FriendInformationName{
+    margin: 10px 0;
+}
+.LoginPage, .RegisterPage{
+    margin-top:50px;
+}
+.LoginPageWrapper ,.RegisterWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.LoginPageContainer{
+    width: 70%;
+    display: flex;
+
+}
+.Loginleft{
+    flex:1;
+    padding:5px;
+}
+.LoginRight{
+    flex: 1;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.AppName{
+    font-size: 50px;
+    margin: 10px 0;
+}
+.AppDescription{
+    font-size:25px;
+}
+.LoginInput{
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+.LoginButton , .NewAccount{
+    padding: 10px 0;
+    font-size: 20px;
+    background: #000000;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.ForgetPassword{
+    text-align:center;
+    margin:10px;
+}
+.mobileOnlineUser{
+    display: none;
+}
+
+.FeedDiv{
+    margin-top:70px;
+}
+.SidebarMenuItem{
+    text-decoration: none;
+    color:black;
+}
+@media screen and (max-width: 1300px) {
+    .centersidebar{
+        display:none;
+    }   
+}
+
+@media screen and (max-width:980px){
+    .RightSidebar{
+        display:none;
+    }
+    .Sidebar{
+        display:none;
+    }
+    .ShareButton{
+        margin-left:78px;
+    }
+    .moreView {
+        margin-left:340px;
+    }
+    .peopleCommentCount {
+        margin-left:308px;
+    }
+}
