@@ -45,7 +45,10 @@ function UserProfile() {
         <div className="UserProfileBottom">
           <div className="UserName">{userInformation.username} </div>
           <div className="UserEmail"> {userInformation.email}</div>
-          <div className="ProfileDescription"> Hello ! , my friends .</div>
+          <div className="ProfileDescription">
+            {" "}
+            {userInformation.desc || "Hello Frnds ! this is description "}
+          </div>
         </div>
 
         <div className="UserProfileContent">
