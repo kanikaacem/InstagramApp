@@ -34,7 +34,11 @@ function RightSidebar({ profile, userInformation }) {
             <div class="Information">From : {userInformation.from}</div>
             <div class="Information">
               Relationship :{" "}
-              {userInformation.relationship === 1 ? "Single" : "Married"}
+              {userInformation.relationship === 1
+                ? "Single"
+                : userInformation.relationship === 2
+                ? "Married"
+                : "None"}
             </div>
           </div>
           <div className="ProfileRightBottom">
