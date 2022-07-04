@@ -15,6 +15,18 @@ function UserProfile() {
     };
     ProfilePostfun();
   }, []);
+
+  const [userInformation, SetuserInformation] = useState({});
+  useEffect(() => {
+    const FetchUserInformation = async () => {
+      const users = await axios
+        .get(`http://localhost:3100/api/user?username=Miya`)
+        .then((response) => {
+          SetuserInformation(response.data);
+        });
+    };
+    FetchUserInformation();
+  }, []);
   return (
     <>
       <div className="UserProfileDiv">
@@ -31,7 +43,8 @@ function UserProfile() {
           ></img>
         </div>
         <div className="UserProfileBottom">
-          <div className="UserName"> User Name</div>
+          <div className="UserName">{userInformation.username} </div>
+          <div className="UserEmail"> {userInformation.email}</div>
           <div className="ProfileDescription"> Hello ! , my friends .</div>
         </div>
 
@@ -41,7 +54,10 @@ function UserProfile() {
               return <ConnectionFeed post={p} key={p._id} />;
             })}
           </div>
-          <RightSidebar profile="profile"></RightSidebar>
+          <RightSidebar
+            profile="profile"
+            userInformation={userInformation}
+          ></RightSidebar>
         </div>
       </div>
     </>

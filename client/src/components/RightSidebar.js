@@ -1,6 +1,6 @@
 import OnlineFriend from "./OnlineFriend";
 import { Users } from "../DemoData";
-function RightSidebar({ profile }) {
+function RightSidebar({ profile, userInformation }) {
   const HomeRightSidebar = () => {
     return (
       <>
@@ -24,15 +24,18 @@ function RightSidebar({ profile }) {
     );
   };
 
-  const ProfileRightSidebar = () => {
+  const ProfileRightSidebar = ({ userInformation }) => {
     return (
       <>
         <div className="ProfileRightSidebar">
           <div className="ProfileRightTop">
             <h1 className="UserInformation"> User Information</h1>
-            <div class="Information">City : New York</div>
-            <div class="Information">From : New York</div>
-            <div class="Information">Relationship : Single</div>
+            <div class="Information">City : {userInformation.city}</div>
+            <div class="Information">From : {userInformation.from}</div>
+            <div class="Information">
+              Relationship :{" "}
+              {userInformation.relationship === 1 ? "Single" : "Married"}
+            </div>
           </div>
           <div className="ProfileRightBottom">
             <h4> User Friends</h4>
@@ -118,7 +121,9 @@ function RightSidebar({ profile }) {
     <div className="RightSidebar">
       <div className="RightSideBarWrapper">
         {profile === "profile" ? (
-          <ProfileRightSidebar></ProfileRightSidebar>
+          <ProfileRightSidebar
+            userInformation={userInformation}
+          ></ProfileRightSidebar>
         ) : (
           <HomeRightSidebar></HomeRightSidebar>
         )}

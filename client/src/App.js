@@ -5,7 +5,6 @@ import ProfilePage from "./components/ProfilePage";
 import "./components/index.css";
 import Menubar from "./components/Menubar";
 import Login from "./components/Login";
-import Feed from "./Feed";
 //Routing
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -17,13 +16,15 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home></Home>} />
-          <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
+          <Route
+            path="/profile/:username"
+            element={<ProfilePage></ProfilePage>}
+          ></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route
             path="/register"
             element={<Login register="register"></Login>}
           ></Route>
-          <Route path="/feed" element={<Feed></Feed>}></Route>
         </Routes>
       </Router>
     </>

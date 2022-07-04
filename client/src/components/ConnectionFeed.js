@@ -20,7 +20,7 @@ function ConnectionFeed({ post }) {
         });
     };
     FetchUser();
-  }, []);
+  }, [post.userId]);
   const likeHandler = () => {
     setLike(isliked ? like - 1 : like + 1);
     setisliked(!isliked);
