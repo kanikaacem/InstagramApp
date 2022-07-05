@@ -3,41 +3,48 @@ import ConnectionFeed from "./ConnectionFeed";
 import RightSidebar from "./RightSidebar";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router";
 function UserProfile() {
   const [ProfilePost, setProfilePost] = useState([]);
+  const [userInformation, SetuserInformation] = useState({});
+  const [userId, setuserId] = useState();
+  const username = useParams().username;
+  //const username = "Kanika";
+  useEffect(() => {
+    const FetchUserInformation = async () => {
+      const users = await axios
+        .get(`http://localhost:3100/api/user?username=${username}`)
+        .then((response) => {
+          setuserId(response.data[0]._id);
+          SetuserInformation(response.data[0]);
+        });
+    };
+    FetchUserInformation();
+  }, [username]);
+
   useEffect(() => {
     const ProfilePostfun = async () => {
       const users = await axios
-        .get(`http://localhost:3100/api/post/allposts/6290a59f6ad628aa372f91fc`)
+        .get(`http://localhost:3100/api/post/allposts/${userId}`)
         .then((response) => {
           return setProfilePost(response.data);
         });
     };
     ProfilePostfun();
-  }, []);
-
-  const [userInformation, SetuserInformation] = useState({});
-  useEffect(() => {
-    const FetchUserInformation = async () => {
-      const users = await axios
-        .get(`http://localhost:3100/api/user?username=Miya`)
-        .then((response) => {
-          SetuserInformation(response.data);
-        });
-    };
-    FetchUserInformation();
-  }, []);
+  }, [userId]);
   return (
     <>
       <div className="UserProfileDiv">
         <div className="UserProfiletop">
           <img
-            src="/assets/post/3.jpeg"
+            src={userInformation.coverPicture || "/assets/nowallpaper.png"}
             className="profileBackgroundImage"
             alt=""
           ></img>
           <img
-            src="/assets/person/1.jpeg"
+            src={
+              userInformation.profilePicture || "/assets/person/noavatar.png"
+            }
             className="profileUserImage"
             alt=""
           ></img>
@@ -53,9 +60,13 @@ function UserProfile() {
 
         <div className="UserProfileContent">
           <div className="ProfileFeed">
-            {ProfilePost.map((p) => {
-              return <ConnectionFeed post={p} key={p._id} />;
-            })}
+            {ProfilePost.length !== 0 ? (
+              ProfilePost.map((p) => {
+                return <ConnectionFeed post={p} key={p._id} />;
+              })
+            ) : (
+              <h3 id="noPostavailable"> No Posts Present</h3>
+            )}
           </div>
           <RightSidebar
             profile="profile"

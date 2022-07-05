@@ -49,7 +49,7 @@ router.get("/", async (req, res) => {
     const userid = req.query.userid;
 
     const user = username
-      ? await User.findOne({ username: username })
+      ? await User.find({ username: username })
       : await User.findById(userid);
     //user._doc get all the data
     //const { password, updatedAt, ...other } = user._doc;

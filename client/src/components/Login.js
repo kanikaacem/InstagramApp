@@ -1,10 +1,37 @@
+import { useRef } from "react";
 function Login({ register }) {
+  const email = useRef(null);
+  const password = useRef(null);
+
+  const loginFunction = () => {
+    if (!email.current.value || !password.current.value) {
+      alert("Please fill all the required fields");
+    } else {
+      console.log(email.current.value);
+      console.log(password.current.value);
+    }
+  };
   const LoginRight = () => {
     return (
       <div className="LoginRight">
-        <input type="email" className="LoginInput" placeholder="Email" />
-        <input type="password" className="LoginInput" placeholder="Password" />
-        <button className="LoginButton">Login In</button>
+        <input
+          type="email"
+          className="LoginInput"
+          placeholder="Email *"
+          required
+          ref={email}
+        />
+        <input
+          type="password"
+          className="LoginInput"
+          placeholder="Password *"
+          minLength="5"
+          required
+          ref={password}
+        />
+        <button className="LoginButton" onClick={loginFunction}>
+          Login In
+        </button>
         <span className="ForgetPassword">Forget Password</span>
         <button className="NewAccount">Create a New Account</button>
       </div>

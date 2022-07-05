@@ -30,8 +30,12 @@ function RightSidebar({ profile, userInformation }) {
         <div className="ProfileRightSidebar">
           <div className="ProfileRightTop">
             <h1 className="UserInformation"> User Information</h1>
-            <div class="Information">City : {userInformation.city}</div>
-            <div class="Information">From : {userInformation.from}</div>
+            <div class="Information">
+              City : {userInformation.city || "None"}
+            </div>
+            <div class="Information">
+              From : {userInformation.from || "None"}
+            </div>
             <div class="Information">
               Relationship :{" "}
               {userInformation.relationship === 1

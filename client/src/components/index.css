@@ -481,6 +481,7 @@
     background: #000000;
     color: #ffffff;
     margin-bottom: 10px;
+    cursor:pointer;
 }
 
 .ForgetPassword{
@@ -520,4 +521,9 @@
     .peopleCommentCount {
         margin-left:308px;
     }
+}
+
+#noPostavailable{
+    text-align:center;
+    margin: 20%;
 }
